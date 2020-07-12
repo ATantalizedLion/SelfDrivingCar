@@ -161,6 +161,8 @@ if load_model == "Y" or load_model == "y":
     model_name = input("Model Folder Name \n")
     actor_load_name = 'Models/'+model_name+'/Actor'
     critic_load_name = 'Models/'+model_name+'/Critic'
+    Actor = tf.keras.models.load_model(actor_load_name)
+    Critic = tf.keras.models.load_model(critic_load_name)
     loaded = 1
 else:
     Actor = ActorModel(learning_rate, observation_shape)  # global network
@@ -169,14 +171,14 @@ else:
 # some initial values
 done = 0
 mem = Memory()
-run = True
+Train = True
 maxRewardSoFar = -90000
 corresponding_critic = -90000
 reward_average_list = []
 critic_average_list = []
 start_time = time.time()           # Register current time
 epoch = 1                          # Current episode
-while run:
+while epoch < maxEpoch:
     print("--- starting run %s ---" % epoch)
     run_time = time.time()
     env.reset()
@@ -186,8 +188,8 @@ while run:
     epoch_loss = 0
     action = np.array([0])
     obs, reward, done, info_dict, Terminate = env.step(action, dt)
-
-    for i in range(maxSteps):
+    i = 0
+    while i < maxSteps:
         # calculate next step
         env.render('human')  # manual, human, human-vsync, rgb_array
         action = Actor(obs).numpy()[0]  # returns 0,1,2, action space = -1 to 1
@@ -195,11 +197,12 @@ while run:
         mem.store(obs, action[0], reward, info_dict['JStar'])
         if Terminate:  # Window was closed.
             epoch = maxEpoch*2
+            i = maxSteps * 2
             run = False
         if done:
             break
-
-    if not Terminate:
+        i += 1
+    if Train:
         # GradientTape tracks the gradient of all variables within scope, useful for optimizer
         with tf.GradientTape() as critic_tape:
             critic_loss, critic_rewards = get_loss_critic(Critic, mem)
