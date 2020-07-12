@@ -17,7 +17,7 @@ tf.keras.backend.set_floatx('float32')
 # 50 / 5  -
 # 40 / 10 -
 
-# TODO: Better organize file structure
+
 # TODO: Plant NN?
 # TODO: Reporting
 # TODO: Advanced env
@@ -156,11 +156,11 @@ maxSteps = int(maxEpochTime/dt)    # max duration of an epoch
 Terminate = None
 learning_rate = 0.0001
 load_model = input('Load_model? Y/N \n')
+
 if load_model == "Y" or load_model == "y":
-    actor_load_name = input("Actor Model File Name \n")
-    Actor = tf.keras.models.load_model(actor_load_name)
-    critic_load_name = input("Critic Model File Name \n")
-    Critic = tf.keras.models.load_model(critic_load_name)
+    model_name = input("Model Folder Name \n")
+    actor_load_name = 'Models/'+model_name+'/Actor'
+    critic_load_name = 'Models/'+model_name+'/Critic'
     loaded = 1
 else:
     Actor = ActorModel(learning_rate, observation_shape)  # global network
@@ -238,8 +238,9 @@ print("--- total %s seconds ---" % (time.time() - start_time))
 
 save = input('save model? Y/N \n')
 if save == "Y" or save == "y":
-    actor_filename = input('Actor Model name \n')
-    tf.keras.models.save_model(Actor, actor_filename)
+    model_save_name = input('Model folder name \n')
+    actor_save_name = 'Models/'+model_save_name+'/Actor'
+    critic_save_name = 'Models/'+model_save_name+'/Critic'
 
-    critic_filename = input('Critic Model name \n')
-    tf.keras.models.save_model(Critic, critic_filename)
+    tf.keras.models.save_model(Actor, actor_save_name)
+    tf.keras.models.save_model(Critic, critic_save_name)

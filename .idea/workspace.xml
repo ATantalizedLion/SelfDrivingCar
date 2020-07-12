@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfadc072-05b9-4ccb-87b9-1a576ec64c09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/dictionaries/Daan.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/gym-carai.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/PoleCart.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/exported.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/carai_env_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym-carai/gym_carai/envs/carai_env_simple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/modules/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym-carai/gym_carai/envs/modules/car.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/exported.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/exported_.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/exported__.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/exported_tooslow.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/roundedSquareTrackTighter.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/simpleSquareTrack.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/simpleSquareTrackTighter.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/quickMapEdit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym-carai/test_noTF.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SelfDrivingCar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SelfDrivingCar.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleEnv_ADHDP.py" beforeDir="false" afterPath="$PROJECT_DIR$/simpleEnv_ADHDP.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +24,98 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test_noTF.py" />
+  </component>
+  <component name="RunManager" selected="Python.Simple env, ADHDP ">
+    <configuration name="Simple env, ADHDP " type="PythonConfigurationType" factoryName="Python">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/simpleEnv_ADHDP.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Simple env, manual control" type="PythonConfigurationType" factoryName="Python">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_noTF.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/quickMapEdit.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="quickMapEdit" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/quickMapEdit.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.quickMapEdit" />
+      <item itemvalue="Python.Simple env, ADHDP " />
+      <item itemvalue="Python.Simple env, manual control" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -57,5 +129,31 @@
       <updated>1594557175765</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="528" y="344" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594558100592">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="528" y="344" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1594558100592" />
+    <state x="853" y="444" key="FileChooserDialogImpl" timestamp="1594558099041">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="853" y="444" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594558099041" />
+    <state width="1998" height="280" key="GridCell.Tab.0.bottom" timestamp="1594558297883">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1998" height="280" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594558297883" />
+    <state width="1998" height="280" key="GridCell.Tab.0.center" timestamp="1594558297883">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1998" height="280" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594558297883" />
+    <state width="1998" height="280" key="GridCell.Tab.0.left" timestamp="1594558297883">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1998" height="280" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594558297883" />
+    <state width="1998" height="280" key="GridCell.Tab.0.right" timestamp="1594558297883">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1998" height="280" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594558297883" />
   </component>
 </project>
