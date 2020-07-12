@@ -4,7 +4,7 @@ import time
 import numpy as np
 
 # Setup for training etc.
-env = gym.make('carai-v0')  # First open the environment
+env = gym.make('carai-simple-v0')  # First open the environment
 
 observation_shape = env.observation_space.shape[0]
 

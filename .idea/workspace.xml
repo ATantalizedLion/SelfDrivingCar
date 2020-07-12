@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cfadc072-05b9-4ccb-87b9-1a576ec64c09" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test_simple_noTF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010Actor/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010Actor/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010Actor/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010Critic/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010Critic/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010Critic/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Actor5010/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Actor5010/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Actor5010/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Actor5030/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Actor5030/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Actor5030/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Critic5010/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Critic5010/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Critic5010/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Critic5030/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Critic5030/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Critic5030/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym_carai/envs/carai_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/carai_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym_carai/envs/carai_env_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/carai_env_simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym_carai/envs/modules/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/modules/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym_carai/envs/modules/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/modules/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simpleEnv_ADHDP.py" beforeDir="false" afterPath="$PROJECT_DIR$/simpleEnv_ADHDP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_noTF.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_noTF.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +47,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test_noTF.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Daan\Google Drive\Education\MSc\Q4\Bio-Inspired\SelfDrivingCar" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.Simple env, ADHDP ">
     <configuration name="Simple env, ADHDP " type="PythonConfigurationType" factoryName="Python">
@@ -76,7 +87,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_noTF.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_simple_noTF.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,6 +117,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="env, manual control" type="PythonConfigurationType" factoryName="Python">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_noTF.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="quickMapEdit" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="SelfDrivingCar" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,11 +146,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gym_carai/envs/resources" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/quickMapEdit.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gym_carai/envs/resources/quickMapEdit.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,6 +163,7 @@
       <item itemvalue="Python.quickMapEdit" />
       <item itemvalue="Python.Simple env, ADHDP " />
       <item itemvalue="Python.Simple env, manual control" />
+      <item itemvalue="Python.env, manual control" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -146,30 +179,57 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="528" y="344" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594558100592">
+    <state x="1364" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594569694915">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="528" y="344" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1594558100592" />
-    <state x="853" y="444" key="FileChooserDialogImpl" timestamp="1594558099041">
+    <state x="1364" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1594569694915" />
+    <state x="853" y="444" key="FileChooserDialogImpl" timestamp="1594568050032">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="853" y="444" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594558099041" />
-    <state width="2533" height="280" key="GridCell.Tab.0.bottom" timestamp="1594562117013">
+    <state x="853" y="444" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594568050032" />
+    <state width="1602" height="492" key="GridCell.Tab.0.bottom" timestamp="1594584321878">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2533" height="280" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594562117013" />
-    <state width="2533" height="280" key="GridCell.Tab.0.center" timestamp="1594562117013">
+    <state width="1602" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
+    <state width="1602" height="492" key="GridCell.Tab.0.center" timestamp="1594584321878">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2533" height="280" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594562117013" />
-    <state width="2533" height="280" key="GridCell.Tab.0.left" timestamp="1594562117013">
+    <state width="1602" height="492" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
+    <state width="1602" height="492" key="GridCell.Tab.0.left" timestamp="1594584321878">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2533" height="280" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594562117013" />
-    <state width="2533" height="280" key="GridCell.Tab.0.right" timestamp="1594562117013">
+    <state width="1602" height="492" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
+    <state width="1602" height="492" key="GridCell.Tab.0.right" timestamp="1594584321878">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2533" height="280" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594562117013" />
+    <state width="1602" height="492" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
+    <state width="1602" height="492" key="GridCell.Tab.1.bottom" timestamp="1594584321879">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1602" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321879" />
+    <state width="1602" height="492" key="GridCell.Tab.1.center" timestamp="1594584321879">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1602" height="492" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321879" />
+    <state width="1602" height="492" key="GridCell.Tab.1.left" timestamp="1594584321878">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1602" height="492" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
+    <state width="1602" height="492" key="GridCell.Tab.1.right" timestamp="1594584321879">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1602" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321879" />
   </component>
 </project>

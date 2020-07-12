@@ -6,19 +6,18 @@ import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'  # this line forces to run on CPU
 import tensorflow as tf
 
-print(tf.config.experimental.list_physical_devices('GPU'))  # show all gpus
-print(tf.__version__)  # show tf version
+# print(tf.config.experimental.list_physical_devices('GPU'))  # show all gpus
+# print(tf.__version__)  # show tf version
 tf.keras.backend.set_floatx('float32')
-# C / A
+
+# C / A neurons
 # 80 / 50 works ~ 150 runs Adam  learning_rate = 0.0001
 # 30 / 30 does not ~ 2+K Adam learning_rate = 0.0001
 # 50 / 30 - works, Adam LR + 0.0001,  488 at worst
 # 50 / 10 - works, Adam LR + 0.0001, 750 at worst
-# 50 / 5  -
-# 40 / 10 -
+# 50 / 5  - Nah
+# 40 / 10 - Nope
 
-
-# TODO: Plant NN?
 # TODO: Reporting
 # TODO: Advanced env
 
@@ -54,14 +53,13 @@ class CriticModel(tf.keras.Model):
     def __init__(self, learning_rate, observation_shape):
         super(CriticModel, self).__init__()
 
-        neurons_inner_layer = 50
+        neurons_inner_layer = 40
 
         # critic part of model (value function)
         self.dense1 = tf.keras.layers.Dense(neurons_inner_layer, activation='relu')
         self.value = tf.keras.layers.Dense(observation_shape) # condense back into 2
 
         self.opt = tf.keras.optimizers.Adam(learning_rate)
-        # self.opt = tf.compat.v1.train.AdamOptimizer(learning_rate, use_locking=True)
 
     def call(self, inputs):
         inputs = tf.expand_dims(inputs, axis=2)
@@ -92,43 +90,16 @@ def get_loss_critic(Critic, memory, gamma=0.99):
     # get value for each timestep
     values = Critic(tf.convert_to_tensor(np.vstack(memory.actions), dtype=tf.float32))
 
-    # Try #1: like in cartpole
-    v = 1
-    if v == 1:
-        # This is based on the assumption that reward evaluates how good current state is
-        # gamma is the forgetting factor, prioritize short term rewards over long term.
-        reward_sum = 0
-        discounted_rewards = []
-        for reward in memory.rewards[::-1]:
-            reward_sum = reward + gamma * reward_sum
-            discounted_rewards.append(reward_sum)
-        discounted_rewards = discounted_rewards[::-1]
-        # get J for each timestep
-        advantage = tf.convert_to_tensor(np.array(discounted_rewards)[:, None], dtype=tf.float32) - values
-        critic_loss = advantage ** 2
-    elif v == 2:
-        # Try #2: like in slides - currently does not work with gradientTape
-        obs_size = len(memory.states[1][0])
-        ecs = []
-        for i in range(len(memory.rewards))[:-1]:
-            ec = values[i+1] - (gamma * values[i] - memory.rewards[i])
-            ecs.append(ec)
-        # get J for each timestep
-        ecs = tf.convert_to_tensor(np.array(ecs)[:, None], dtype=tf.float32)
-        critic_loss = ecs ** 2
-    elif v == 3:
-        # Try #3: hybrid
-        # discount the rewards based on 'R_t = sum gamma^(k-t) r_k(s_k, a_k)
-        gamma_mag = gamma
-        reward_sum = 0
-        discounted_rewards = []
-        for reward in memory.rewards[::-1]:
-            gamma_mag = gamma*gamma_mag
-            discounted_rewards.append(reward*gamma_mag)
-        # discounted_rewards = discounted_rewards[::-1]  # get original order
-        # get J for each timestep
-        advantage = tf.convert_to_tensor(np.array(discounted_rewards)[:, None], dtype=tf.float32) - values
-        critic_loss = advantage ** 2
+    # gamma is the forgetting factor, prioritize short term rewards over long term.
+    reward_sum = 0
+    discounted_rewards = []
+    for reward in memory.rewards[::-1]:
+        reward_sum = reward + gamma * reward_sum
+        discounted_rewards.append(reward_sum)
+    discounted_rewards = discounted_rewards[::-1]
+    # get J for each timestep
+    advantage = tf.convert_to_tensor(np.array(discounted_rewards)[:, None], dtype=tf.float32) - values
+    critic_loss = advantage ** 2
     critic_loss = tf.reduce_mean(critic_loss)
     return critic_loss, discounted_rewards
 
@@ -163,15 +134,15 @@ if load_model == "Y" or load_model == "y":
     critic_load_name = 'Models/'+model_name+'/Critic'
     Actor = tf.keras.models.load_model(actor_load_name)
     Critic = tf.keras.models.load_model(critic_load_name)
-    loaded = 1
+    Train = False
 else:
     Actor = ActorModel(learning_rate, observation_shape)  # global network
     Critic = CriticModel(learning_rate, observation_shape)  # global network
+    Train = True
 
 # some initial values
 done = 0
 mem = Memory()
-Train = True
 maxRewardSoFar = -90000
 corresponding_critic = -90000
 reward_average_list = []
@@ -217,24 +188,24 @@ while epoch < maxEpoch:
 
         print("--- Actor loss {} - ".format(actor_loss))
         print("--- Critic loss {} - ".format(critic_loss))
+
+        # Statistics for training progress evaluation
+        reward_average = sum(mem.rewards)/len(mem.rewards)
+        critic_average = sum(critic_rewards)/len(critic_rewards)
+        reward_average_list.append(reward_average)
+        critic_average_list.append(critic_average)
+        if reward_average > maxRewardSoFar:
+            maxRewardSoFar = reward_average
+            corresponding_critic = critic_average
+        print("- Highest reward yet {} - {} - ".format(maxRewardSoFar, corresponding_critic))
+        print("- Most recent run reward {} - {} - ".format(reward_average, critic_average))
+        if len(reward_average_list) > 11:
+            last = reward_average_list[-10:]
+            last2 = critic_average_list[-10:]
+            print("- Last ten runs average {}, - {} - ".format(sum(last)/len(last), sum(last2)/len(last2)))
     print("--- %s seconds ---" % (time.time() - run_time))
 
     epoch += 1
-
-    # Statistics for training progress evaluation
-    reward_average = sum(mem.rewards)/len(mem.rewards)
-    critic_average = sum(critic_rewards)/len(critic_rewards)
-    reward_average_list.append(reward_average)
-    critic_average_list.append(critic_average)
-    if reward_average > maxRewardSoFar:
-        maxRewardSoFar = reward_average
-        corresponding_critic = critic_average
-    print("- Highest reward yet {} - {} - ".format(maxRewardSoFar, corresponding_critic))
-    print("- Most recent run reward {} - {} - ".format(reward_average, critic_average))
-    if len(reward_average_list) > 11:
-        last = reward_average_list[-10:]
-        last2 = critic_average_list[-10:]
-        print("- Last ten runs average {}, - {} - ".format(sum(last)/len(last), sum(last2)/len(last2)))
 env.close()
 print("--- total %s seconds ---" % (time.time() - start_time))
 
