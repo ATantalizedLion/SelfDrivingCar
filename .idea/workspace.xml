@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cfadc072-05b9-4ccb-87b9-1a576ec64c09" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/dictionaries/Daan.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/gym-carai.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/PoleCart.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/exported.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/carai_env_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym-carai/gym_carai/envs/carai_env_simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/modules/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym-carai/gym_carai/envs/modules/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/exported.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/exported_.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/exported__.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/exported_tooslow.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/roundedSquareTrackTighter.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/simpleSquareTrack.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/gym_carai/envs/resources/simpleSquareTrackTighter.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/quickMapEdit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym-carai/test_noTF.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1eaQMSlApVmSbRmVhEAyuRYvaPD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfadc072-05b9-4ccb-87b9-1a576ec64c09" name="Default Changelist" comment="" />
+      <created>1594557175765</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594557175765</updated>
+    </task>
+    <servers />
+  </component>
+</project>
