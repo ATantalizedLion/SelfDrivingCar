@@ -15,7 +15,7 @@ debug = 1  # renders all bumpers, sensors and collision markers.
 # TODO: Differentiate tickrate and fps?
 
 
-class SimpleCarAIEnv(gym.Env):
+class CarAIEnv(gym.Env):
     metadata = {'render.modes': ['human', 'human-vsync', 'rgb_array', 'manual'], 'video.frames_per_second': 60}
     '''
     human - displays the environment, no vsync, timestep as fast as possible, 
@@ -26,7 +26,8 @@ class SimpleCarAIEnv(gym.Env):
     def __init__(self):
         pyglet.resource.path = ['gym_carai/envs/resources']
         pyglet.resource.reindex()
-        score_label_font_size = 36
+        self.mode = 'not_simple'
+        self.label_font_size = 36
         self.viewer = None
         self.Terminate = False
         self.manual = None
@@ -49,7 +50,6 @@ class SimpleCarAIEnv(gym.Env):
         self.reward = 0
         self.JStar = 0
 
-        self.score_label = None
         self.track_label = None
         self.time_label = None
         self.episode_label = None
@@ -63,16 +63,13 @@ class SimpleCarAIEnv(gym.Env):
             'gym_carai/envs/resources/' + self.track_name + '.csv', self.track_batch)
         self.current_checkpoint = 1
 
-        self.car_obj = Car(car_position, debug_batch=self.debug_batch, main_batch=self.main_batch, mode='simple')
+        self.car_obj = Car(car_position, debug_batch=self.debug_batch, main_batch=self.main_batch, mode=self.mode)
         self.car_bumpers = [self.car_obj.Bumper, self.car_obj.SideL, self.car_obj.SideR, self.car_obj.Rear]
 
         # all objects requiring .update()
         self.envObjects = [self.car_obj]
 
-        # implemented in this env:
-        # self.sensors = [self.car_obj.FrontDistanceSensor, self.car_obj.RightDistanceSensor,
-        #                 self.car_obj.RearDistanceSensor, self.car_obj.LeftDistanceSensor]
-        self.sensors = [self.car_obj.RightDistanceSensor]
+        self.sensors = self.car_obj.sensors
 
         self.observation_space = spaces.Box(np.zeros(len(self.sensors)),
                                             self.car_obj.sensorRange*np.ones(len(self.sensors)))
@@ -94,7 +91,19 @@ class SimpleCarAIEnv(gym.Env):
                 action[0] = 1
             else:
                 action[0] = 0
-
+            if self.keys[pyglet.window.key.UP] == 1:
+                if self.keys[pyglet.window.key.DOWN] == 1:
+                    action[1] = 0
+                else:
+                    action[1] = 1
+            elif self.keys[pyglet.window.key.DOWN] == 1:
+                action[1] = -1
+            else:
+                action[1] = 0
+            # if self.keys[pyglet.window.key.SPACE] == 1:
+            #     action[2] = 1
+            # else:
+            #     action[2] = 0
         for obj in self.envObjects:
             obj.update(dt, action)
         for obj in self.walls:
@@ -111,7 +120,6 @@ class SimpleCarAIEnv(gym.Env):
                         if self.current_checkpoint > len(self.checkpoints):
                             self.current_checkpoint -= len(self.checkpoints)
                         self.reward = 0
-                        self.score_label.text = "Current Score: " + str(self.score)
         current_sensor_number = 0
         for sensor in self.sensors:
             min_distance = sensor.sensor_range
@@ -148,7 +156,6 @@ class SimpleCarAIEnv(gym.Env):
             obj.reset()
         if self.viewer:
             self.episode_label.text = "Current episode:" + str(self.episode)
-            self.score_label.text = "Current Score: " + str(self.score)
         self.episode += 1
 
     def render(self, mode='human'):
@@ -159,8 +166,8 @@ class SimpleCarAIEnv(gym.Env):
             self.manual = 1
         if self.viewer is None:
             self.viewer = Viewer(window_h_size, window_v_size, self.manual, self.vsync)
-            [self.score_label, self.track_label, self.time_label, self.episode_label] = \
-                self.viewer.labels(self.main_batch, 36, self.score, self.track_name, self.t, self.episode)
+            [self.track_label, self.time_label, self.episode_label] = \
+                self.viewer.labels(self.main_batch, self.label_font_size, self.track_name, self.t, self.episode)
             # redefine draw event
             pyglet.gl.glClearColor(1, 1, 1, 1)  # white background
             self.viewer.toDraw = [self.track_batch, self.main_batch]

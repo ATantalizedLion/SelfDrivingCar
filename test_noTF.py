@@ -30,7 +30,7 @@ while run:
 
     # initial values
     epoch_loss = 0
-    action = np.array([0])
+    action = np.array([0,0,0])
 
     for i in range(maxSteps):
         # calculate next step

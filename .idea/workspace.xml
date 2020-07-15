@@ -20,12 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfadc072-05b9-4ccb-87b9-1a576ec64c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_simple_noTF.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Env_ADHDP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SensitivityAnalysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gym_carai/envs/carai_env_less_simple.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simpleEnv2_ADHDP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_simple2_noTF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5010/Actor/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5010/Actor/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5010/Actor/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5010/Critic/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5010/Critic/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5010/Critic/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5030/Actor/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5030/Actor/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5030/Actor/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5030/Critic/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5030/Critic/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/5030/Critic/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym_carai/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym_carai/envs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym_carai/envs/carai_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/carai_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym_carai/envs/carai_env_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/carai_env_simple.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym_carai/envs/modules/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/modules/car.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym_carai/envs/modules/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/modules/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym_carai/envs/modules/viewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/modules/viewer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym_carai/envs/resources/quickMapEdit.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/resources/quickMapEdit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simpleEnv_ADHDP.py" beforeDir="false" afterPath="$PROJECT_DIR$/simpleEnv_ADHDP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_noTF.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_noTF.py" afterDir="false" />
     </list>
@@ -33,6 +53,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,14 +73,59 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test_noTF.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test_simple2_noTF.py" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Daan\Google Drive\Education\MSc\Q4\Bio-Inspired\SelfDrivingCar\gym_carai\envs" />
       <recent name="C:\Users\Daan\Google Drive\Education\MSc\Q4\Bio-Inspired\SelfDrivingCar" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Simple env, ADHDP ">
+  <component name="RunManager" selected="Python.less simple env, ADHDP ">
+    <configuration name="Less simple env, manual control" type="PythonConfigurationType" factoryName="Python">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_simple2_noTF.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SensitivityAnalysis" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SensitivityAnalysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Simple env, ADHDP " type="PythonConfigurationType" factoryName="Python">
       <module name="SelfDrivingCar" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,6 +189,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="env, ADHDP" type="PythonConfigurationType" factoryName="Python">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Env_ADHDP.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="env, manual control" type="PythonConfigurationType" factoryName="Python">
       <module name="SelfDrivingCar" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,6 +223,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_noTF.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="less simple env, ADHDP " type="PythonConfigurationType" factoryName="Python">
+      <module name="SelfDrivingCar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Daan\.conda\envs\TF-Nightly\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/simpleEnv2_ADHDP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,7 +276,11 @@
     <list>
       <item itemvalue="Python.quickMapEdit" />
       <item itemvalue="Python.Simple env, ADHDP " />
+      <item itemvalue="Python.env, ADHDP" />
+      <item itemvalue="Python.less simple env, ADHDP " />
+      <item itemvalue="Python.SensitivityAnalysis" />
       <item itemvalue="Python.Simple env, manual control" />
+      <item itemvalue="Python.Less simple env, manual control" />
       <item itemvalue="Python.env, manual control" />
     </list>
   </component>
@@ -189,47 +307,60 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1364" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594569694915">
+    <state x="1364" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594795710242">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1364" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1594569694915" />
-    <state x="853" y="444" key="FileChooserDialogImpl" timestamp="1594568050032">
+    <state x="1364" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1594795710242" />
+    <state x="1008" y="441" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594745654267">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="853" y="444" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594568050032" />
-    <state width="1602" height="492" key="GridCell.Tab.0.bottom" timestamp="1594584321878">
+    <state x="1008" y="441" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1594745654267" />
+    <state x="853" y="444" key="FileChooserDialogImpl" timestamp="1594795709196">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1602" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
-    <state width="1602" height="492" key="GridCell.Tab.0.center" timestamp="1594584321878">
+    <state x="853" y="444" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594795709196" />
+    <state width="1754" height="419" key="GridCell.Tab.0.bottom" timestamp="1594819807808">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1602" height="492" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
-    <state width="1602" height="492" key="GridCell.Tab.0.left" timestamp="1594584321878">
+    <state width="1754" height="419" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594819807808" />
+    <state width="1754" height="419" key="GridCell.Tab.0.center" timestamp="1594819807808">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1602" height="492" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
-    <state width="1602" height="492" key="GridCell.Tab.0.right" timestamp="1594584321878">
+    <state width="1754" height="419" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594819807808" />
+    <state width="1754" height="419" key="GridCell.Tab.0.left" timestamp="1594819807807">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1602" height="492" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
-    <state width="1602" height="492" key="GridCell.Tab.1.bottom" timestamp="1594584321879">
+    <state width="1754" height="419" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594819807807" />
+    <state width="1754" height="419" key="GridCell.Tab.0.right" timestamp="1594819807808">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1602" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321879" />
-    <state width="1602" height="492" key="GridCell.Tab.1.center" timestamp="1594584321879">
+    <state width="1754" height="419" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594819807808" />
+    <state width="2533" height="482" key="GridCell.Tab.1.bottom" timestamp="1594801848985">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1602" height="492" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321879" />
-    <state width="1602" height="492" key="GridCell.Tab.1.left" timestamp="1594584321878">
+    <state width="2533" height="482" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594801848985" />
+    <state width="2533" height="482" key="GridCell.Tab.1.center" timestamp="1594801848985">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1602" height="492" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321878" />
-    <state width="1602" height="492" key="GridCell.Tab.1.right" timestamp="1594584321879">
+    <state width="2533" height="482" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594801848985" />
+    <state width="2533" height="482" key="GridCell.Tab.1.left" timestamp="1594801848985">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1602" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594584321879" />
+    <state width="2533" height="482" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594801848985" />
+    <state width="2533" height="482" key="GridCell.Tab.1.right" timestamp="1594801848985">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2533" height="482" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594801848985" />
+    <state x="321" y="108" key="SettingsEditor" timestamp="1594585372067">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="321" y="108" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1594585372067" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1594816111159">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1594816111159" />
   </component>
 </project>

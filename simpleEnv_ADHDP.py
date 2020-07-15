@@ -3,6 +3,7 @@ import gym_carai
 import time
 import numpy as np
 import os
+
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'  # this line forces to run on CPU
 import tensorflow as tf
 
@@ -10,23 +11,14 @@ import tensorflow as tf
 # print(tf.__version__)  # show tf version
 tf.keras.backend.set_floatx('float32')
 
-# C / A neurons
-# 80 / 50 works ~ 150 runs Adam  learning_rate = 0.0001
-# 30 / 30 does not ~ 2+K Adam learning_rate = 0.0001
-# 50 / 30 - works, Adam LR + 0.0001,  488 at worst
-# 50 / 10 - works, Adam LR + 0.0001, 750 at worst
-# 50 / 5  - Nah
-# 40 / 10 - Nope
-
 # TODO: Reporting
-# TODO: Advanced env
 
 def map_to_range(x, min_out=-1, max_out=1):
     # custom
     x_out = tf.keras.backend.tanh(x)  # x in range(-1,1)
-    scale = (max_out-min_out)/2.
+    scale = (max_out - min_out) / 2.
     min_out += 1
-    return  x_out * scale + min_out
+    return x_out * scale + min_out
 
 
 class Memory:
@@ -49,15 +41,36 @@ class Memory:
         self.JStar = []
 
 
+class TrainMemory:
+    def __init__(self):
+        self.avg_rewards = []
+        self.run_times = []
+
+    def store(self, avg_reward, runtime):
+        self.avg_rewards.append(avg_reward)
+        self.run_times.append(runtime)
+
+    def save(self, location):
+        save_arr = np.array([self.avg_rewards, self.run_times])
+        np.savetxt(location + '/Progress.csv', save_arr)
+
+    def clear(self):
+        self.avg_rewards = []
+        self.run_times = []
+
+
 class CriticModel(tf.keras.Model):
     def __init__(self, learning_rate, observation_shape):
         super(CriticModel, self).__init__()
 
-        neurons_inner_layer = 40
+        neurons_inner_layer = 50
+        k_initializer = tf.keras.initializers.lecun_uniform()
+        b_initializer = tf.keras.initializers.zeros()
 
         # critic part of model (value function)
-        self.dense1 = tf.keras.layers.Dense(neurons_inner_layer, activation='relu')
-        self.value = tf.keras.layers.Dense(observation_shape) # condense back into 2
+        self.dense1 = tf.keras.layers.Dense(neurons_inner_layer, activation='relu',
+                                            kernel_initializer=k_initializer, bias_initializer=b_initializer)
+        self.value = tf.keras.layers.Dense(observation_shape)  # condense back into 2
 
         self.opt = tf.keras.optimizers.Adam(learning_rate)
 
@@ -72,10 +85,15 @@ class ActorModel(tf.keras.Model):
     def __init__(self, learning_rate, observation_shape):
         super(ActorModel, self).__init__()
         self.observation_shape = observation_shape
-        neurons_inner_layer = 10
+
+        neurons_inner_layer = 25
+        k_initializer = tf.keras.initializers.TruncatedNormal(mean=0.0, stddev=0.002)
+        b_initializer = tf.keras.initializers.zeros()
 
         # actor part of Model (policies)
-        self.dense1 = tf.keras.layers.Dense(neurons_inner_layer, activation='relu')
+
+        self.dense1 = tf.keras.layers.Dense(neurons_inner_layer, activation='relu',
+                                            kernel_initializer=k_initializer, bias_initializer=b_initializer)
         self.turning = tf.keras.layers.Dense(1, activation=map_to_range)  # sigmoid for turning direction
 
         self.opt = tf.keras.optimizers.Adam(learning_rate)
@@ -120,18 +138,18 @@ env = gym.make('carai-simple-v0')  # First open the environment
 observation_shape = env.observation_space.shape[0]
 
 # load some settings and the models
-maxEpoch = 100000                  # max amount of epochs
-maxEpochTime = 120                 # [s] max seconds to spend per epoch
-dt = 1/60                          # fps (should equal monitor refresh rate)
-maxSteps = int(maxEpochTime/dt)    # max duration of an epoch
+maxEpoch = 100000  # max amount of epochs
+maxEpochTime = 120  # [s] max seconds to spend per epoch
+dt = 1 / 60  # fps (should equal monitor refresh rate)
+maxSteps = int(maxEpochTime / dt)  # max duration of an epoch
 Terminate = None
-learning_rate = 0.0001
+learning_rate = 0.001
 load_model = input('Load_model? Y/N \n')
 
 if load_model == "Y" or load_model == "y":
     model_name = input("Model Folder Name \n")
-    actor_load_name = 'Models/'+model_name+'/Actor'
-    critic_load_name = 'Models/'+model_name+'/Critic'
+    actor_load_name = 'Models/' + model_name + '/Actor'
+    critic_load_name = 'Models/' + model_name + '/Critic'
     Actor = tf.keras.models.load_model(actor_load_name)
     Critic = tf.keras.models.load_model(critic_load_name)
     Train = False
@@ -143,12 +161,13 @@ else:
 # some initial values
 done = 0
 mem = Memory()
+train_mem = TrainMemory()
 maxRewardSoFar = -90000
 corresponding_critic = -90000
 reward_average_list = []
 critic_average_list = []
-start_time = time.time()           # Register current time
-epoch = 1                          # Current episode
+start_time = time.time()  # Register current time
+epoch = 1  # Current episode
 while epoch < maxEpoch:
     print("--- starting run %s ---" % epoch)
     run_time = time.time()
@@ -167,7 +186,7 @@ while epoch < maxEpoch:
         obs, reward, done, info_dict, Terminate = env.step(action, dt)
         mem.store(obs, action[0], reward, info_dict['JStar'])
         if Terminate:  # Window was closed.
-            epoch = maxEpoch*2
+            epoch = maxEpoch * 2
             i = maxSteps * 2
             run = False
         if done:
@@ -189,9 +208,10 @@ while epoch < maxEpoch:
         print("--- Actor loss {} - ".format(actor_loss))
         print("--- Critic loss {} - ".format(critic_loss))
 
-        # Statistics for training progress evaluation
-        reward_average = sum(mem.rewards)/len(mem.rewards)
-        critic_average = sum(critic_rewards)/len(critic_rewards)
+        # Statistics for (live and hindsight) training progress evaluation
+        reward_average = sum(mem.rewards) / len(mem.rewards)
+        train_mem.store(reward_average, info_dict['t'])
+        critic_average = sum(critic_rewards) / len(critic_rewards)
         reward_average_list.append(reward_average)
         critic_average_list.append(critic_average)
         if reward_average > maxRewardSoFar:
@@ -202,19 +222,21 @@ while epoch < maxEpoch:
         if len(reward_average_list) > 11:
             last = reward_average_list[-10:]
             last2 = critic_average_list[-10:]
-            print("- Last ten runs average {}, - {} - ".format(sum(last)/len(last), sum(last2)/len(last2)))
+            print("- Last ten runs average {}, - {} - ".format(sum(last) / len(last), sum(last2) / len(last2)))
     print("--- %s seconds ---" % (time.time() - run_time))
 
     epoch += 1
 env.close()
 print("--- total %s seconds ---" % (time.time() - start_time))
 
-
 save = input('save model? Y/N \n')
 if save == "Y" or save == "y":
     model_save_name = input('Model folder name \n')
-    actor_save_name = 'Models/'+model_save_name+'/Actor'
-    critic_save_name = 'Models/'+model_save_name+'/Critic'
+    save_location = 'Models/' + model_save_name
+    actor_save_name = save_location + '/Actor'
+    critic_save_name = save_location + '/Critic'
 
     tf.keras.models.save_model(Actor, actor_save_name)
     tf.keras.models.save_model(Critic, critic_save_name)
+
+    train_mem.save(save_location)
