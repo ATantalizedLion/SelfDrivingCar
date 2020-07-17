@@ -86,7 +86,7 @@ class ActorModel(tf.keras.Model):
         self.observation_shape = observation_shape
 
         neurons_inner_layer = 80
-        k_initializer = tf.keras.initializers.TruncatedNormal(mean=0.0, stddev=0.04 / neurons_inner_layer)
+        k_initializer = tf.keras.initializers.TruncatedNormal(mean=0.0, stddev=0.0005)
         b_initializer = tf.keras.initializers.zeros()
 
         # actor part of Model (policies)

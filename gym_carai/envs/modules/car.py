@@ -69,15 +69,15 @@ class Car:
             self.vel_y = 0
 
             # applied 'forces'
-            self.acc_power = 200.0
-            self.turn_speed = 360.0
+            self.acc_power = 400.0
+            self.turn_speed = 720.0
             self.brake_force = 4
             self.angular_brake_force = 4
 
             # decay factors
-            self.drifting_factor = 2.1
+            self.drifting_factor = 3.5
             self.drag = 0.9
-            self.angular_drag = 0.9
+            self.angular_drag = 0.85
 
         # set up bumpers, distance sensors - only size is relevant, proper orientation will be set in the first step.
         self.Bumper = Bumper([-self.width / 2, 0, self.width / 2, 0], self.debug_batch)
@@ -97,8 +97,7 @@ class Car:
         # set up distance sensors
         if mode == 'simple':
             RightDistanceSensor = Sensor(self.debug_batch, self.sensorRange, 90, fsr)
-            LeftDistanceSensor = Sensor(self.debug_batch, self.sensorRange, -90, fsl)
-            self.sensors = [RightDistanceSensor, LeftDistanceSensor]
+            self.sensors = [RightDistanceSensor]
         elif mode == 'less-simple':
             # FrontDistanceSensorL = Sensor(self.debug_batch, self.sensorRange, 0, flc)
             FrontDistanceSensor = Sensor(self.debug_batch, self.sensorRange, 0, fc)
@@ -111,8 +110,8 @@ class Car:
             # RightCornerAngled2 = Sensor(self.debug_batch, self.sensorRange, 65, frc)
             # LeftCornerAngled2 = Sensor(self.debug_batch, self.sensorRange, -65, flc)
             self.sensors = [FrontDistanceSensor, # FrontDistanceSensorR, FrontDistanceSensorL,
-                            LeftDistanceSensor, RightDistanceSensor] #,  # RearDistanceSensor,
-                            #RightCornerAngled1, LeftCornerAngled1, RightCornerAngled2, LeftCornerAngled2]
+                            LeftDistanceSensor, RightDistanceSensor]  # ,  # RearDistanceSensor,
+                            # RightCornerAngled1, LeftCornerAngled1, RightCornerAngled2, LeftCornerAngled2]
         else:
             # FrontDistanceSensorL = Sensor(self.debug_batch, self.sensorRange, 0, flc)
             FrontDistanceSensor = Sensor(self.debug_batch, self.sensorRange, 0, fc)

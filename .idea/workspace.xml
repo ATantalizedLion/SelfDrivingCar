@@ -20,34 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfadc072-05b9-4ccb-87b9-1a576ec64c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Env_ADHDP.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SensitivityAnalysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gym_carai/envs/carai_env_less_simple.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simpleEnv2_ADHDP.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_simple2_noTF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010/Actor/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010/Actor/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010/Actor/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010/Critic/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010/Critic/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5010/Critic/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5030/Actor/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5030/Actor/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5030/Actor/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5030/Critic/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5030/Critic/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/5030/Critic/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym_carai/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym_carai/envs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym_carai/envs/carai_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/carai_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym_carai/envs/carai_env_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/carai_env_simple.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym_carai/envs/modules/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/modules/car.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym_carai/envs/modules/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/modules/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym_carai/envs/modules/viewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/modules/viewer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym_carai/envs/resources/quickMapEdit.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_carai/envs/resources/quickMapEdit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleEnv2_ADHDP.py" beforeDir="false" afterPath="$PROJECT_DIR$/simpleEnv2_ADHDP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simpleEnv_ADHDP.py" beforeDir="false" afterPath="$PROJECT_DIR$/simpleEnv_ADHDP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_noTF.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_noTF.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +61,7 @@
       <recent name="C:\Users\Daan\Google Drive\Education\MSc\Q4\Bio-Inspired\SelfDrivingCar" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.less simple env, ADHDP ">
+  <component name="RunManager" selected="Python.env, ADHDP">
     <configuration name="Less simple env, manual control" type="PythonConfigurationType" factoryName="Python">
       <module name="SelfDrivingCar" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -322,38 +300,38 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="853" y="444" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594795709196" />
-    <state width="1754" height="419" key="GridCell.Tab.0.bottom" timestamp="1594819807808">
+    <state width="1257" height="411" key="GridCell.Tab.0.bottom" timestamp="1594978987425">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1754" height="419" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594819807808" />
-    <state width="1754" height="419" key="GridCell.Tab.0.center" timestamp="1594819807808">
+    <state width="1257" height="411" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594978987425" />
+    <state width="1257" height="411" key="GridCell.Tab.0.center" timestamp="1594978987425">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1754" height="419" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594819807808" />
-    <state width="1754" height="419" key="GridCell.Tab.0.left" timestamp="1594819807807">
+    <state width="1257" height="411" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594978987425" />
+    <state width="1257" height="411" key="GridCell.Tab.0.left" timestamp="1594978987425">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1754" height="419" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594819807807" />
-    <state width="1754" height="419" key="GridCell.Tab.0.right" timestamp="1594819807808">
+    <state width="1257" height="411" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594978987425" />
+    <state width="1257" height="411" key="GridCell.Tab.0.right" timestamp="1594978987425">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1754" height="419" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594819807808" />
-    <state width="2533" height="482" key="GridCell.Tab.1.bottom" timestamp="1594801848985">
+    <state width="1257" height="411" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594978987425" />
+    <state width="1257" height="490" key="GridCell.Tab.1.bottom" timestamp="1594977316721">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2533" height="482" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594801848985" />
-    <state width="2533" height="482" key="GridCell.Tab.1.center" timestamp="1594801848985">
+    <state width="1257" height="490" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594977316721" />
+    <state width="1257" height="490" key="GridCell.Tab.1.center" timestamp="1594977316721">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2533" height="482" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594801848985" />
-    <state width="2533" height="482" key="GridCell.Tab.1.left" timestamp="1594801848985">
+    <state width="1257" height="490" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594977316721" />
+    <state width="1257" height="490" key="GridCell.Tab.1.left" timestamp="1594977316721">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2533" height="482" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594801848985" />
-    <state width="2533" height="482" key="GridCell.Tab.1.right" timestamp="1594801848985">
+    <state width="1257" height="490" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594977316721" />
+    <state width="1257" height="490" key="GridCell.Tab.1.right" timestamp="1594977316721">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2533" height="482" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594801848985" />
+    <state width="1257" height="490" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594977316721" />
     <state x="321" y="108" key="SettingsEditor" timestamp="1594585372067">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

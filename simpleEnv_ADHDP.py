@@ -72,7 +72,7 @@ class CriticModel(tf.keras.Model):
                                             kernel_initializer=k_initializer, bias_initializer=b_initializer)
         self.value = tf.keras.layers.Dense(observation_shape)  # condense back into 2
 
-        self.opt = tf.keras.optimizers.Adam(learning_rate)
+        self.opt = tf.keras.optimizers.RMSprop(learning_rate)
 
     def call(self, inputs):
         inputs = tf.expand_dims(inputs, axis=2)
@@ -96,7 +96,7 @@ class ActorModel(tf.keras.Model):
                                             kernel_initializer=k_initializer, bias_initializer=b_initializer)
         self.turning = tf.keras.layers.Dense(1, activation=map_to_range)  # sigmoid for turning direction
 
-        self.opt = tf.keras.optimizers.Adam(learning_rate)
+        self.opt = tf.keras.optimizers.RMSprop(learning_rate)
 
     def call(self, inputs):
         x = self.dense1(inputs)

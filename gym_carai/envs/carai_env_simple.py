@@ -12,8 +12,9 @@ pyglet.options['debug_gl'] = False  # performance increase
 window_h_size = 1920
 window_v_size = 1080
 debug = 1  # renders all bumpers, sensors and collision markers.
-# TODO: Differentiate tickrate and fps?
-# TODO: implement 'AI View'
+# TODO: Separate tickrate and fps?
+# TODO: implement 'AI View' - showing only the (stationary) car and the sensors with crosses -
+#  would be interesting to show what the AI sees.
 
 class SimpleCarAIEnv(gym.Env):
     metadata = {'render.modes': ['human', 'human-vsync', 'rgb_array', 'manual'], 'video.frames_per_second': 60}

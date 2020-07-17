@@ -12,7 +12,6 @@ pyglet.options['debug_gl'] = False  # performance increase
 window_h_size = 1920
 window_v_size = 1080
 debug = 1  # renders all bumpers, sensors and collision markers.
-# TODO: Differentiate tickrate and fps?
 
 
 class CarAIEnv(gym.Env):
@@ -35,8 +34,6 @@ class CarAIEnv(gym.Env):
         self.vsync = False
 
         # 3 batches, one for car, one for obstacles, one for debug features
-        # TODO: Move into batches with groups instead. - might not be worth the performance improvent due to the amount
-        #  of code requiring refactoring
         self.main_batch = pyglet.graphics.Batch()
         self.track_batch = pyglet.graphics.Batch()
         self.debug_batch = pyglet.graphics.Batch()
@@ -56,7 +53,7 @@ class CarAIEnv(gym.Env):
 
         self.action_space = spaces.Box(np.array([-1]), np.array([+1]))  # steering only, -1 to +1 on one action
 
-        self.track_name = 'roundSimpleTrack'
+        self.track_name = 'roundSimpleTrackBC'
 
         # define functions
         self.walls, self.checkpoints, car_position = generate_track(
