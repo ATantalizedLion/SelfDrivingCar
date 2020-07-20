@@ -15,6 +15,7 @@ debug = 1  # renders all bumpers, sensors and collision markers.
 # TODO: Separate tickrate and fps?
 # TODO: implement 'AI View' - showing only the (stationary) car and the sensors with crosses -
 #  would be interesting to show what the AI sees.
+# TODO: Make more use of inhertance to reduce amount of lines over the 3 environments
 
 class SimpleCarAIEnv(gym.Env):
     metadata = {'render.modes': ['human', 'human-vsync', 'rgb_array', 'manual'], 'video.frames_per_second': 60}
@@ -145,6 +146,12 @@ class SimpleCarAIEnv(gym.Env):
         self.episode += 1
 
     def render(self, mode='human'):
+        '''
+        'human' - runs as fast as possible
+        'human-vsync' - runs at screen framerate (timestep per frame is still 1/60) also includes anti aliasing
+        'rgb_array' - returns an RGB array instead of rendering the output in the window
+        'manual' - overrides input actions with keyboard inputs, renders like human-vsync
+        '''
         assert mode in ['human', 'human-vsync', 'rgb_array', 'manual']
         if mode == 'human-vsync':
             self.vsync = True

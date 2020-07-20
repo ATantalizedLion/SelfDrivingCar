@@ -11,6 +11,7 @@ import tensorflow as tf
 # print(tf.__version__)  # show tf version
 tf.keras.backend.set_floatx('float32')
 
+
 # TODO: Reporting
 
 def map_to_range(x, min_out=-1, max_out=1):
@@ -64,7 +65,7 @@ class CriticModel(tf.keras.Model):
         super(CriticModel, self).__init__()
 
         neurons_inner_layer = 50
-        k_initializer = tf.keras.initializers.lecun_uniform()
+        k_initializer = tf.keras.initializers.GlorotUniform()
         b_initializer = tf.keras.initializers.zeros()
 
         # critic part of model (value function)
@@ -72,7 +73,7 @@ class CriticModel(tf.keras.Model):
                                             kernel_initializer=k_initializer, bias_initializer=b_initializer)
         self.value = tf.keras.layers.Dense(observation_shape)  # condense back into 2
 
-        self.opt = tf.keras.optimizers.RMSprop(learning_rate)
+        self.opt = tf.keras.optimizers.Nadam(learning_rate, beta_1=0.95)
 
     def call(self, inputs):
         inputs = tf.expand_dims(inputs, axis=2)
@@ -87,16 +88,16 @@ class ActorModel(tf.keras.Model):
         self.observation_shape = observation_shape
 
         neurons_inner_layer = 25
-        k_initializer = tf.keras.initializers.TruncatedNormal(mean=0.0, stddev=0.002)
+        # k_initializer = tf.keras.initializers.TruncatedNormal(mean=0.0, stddev=0.002)
+        k_initializer = tf.keras.initializers.GlorotUniform()
         b_initializer = tf.keras.initializers.zeros()
 
         # actor part of Model (policies)
-
         self.dense1 = tf.keras.layers.Dense(neurons_inner_layer, activation='relu',
                                             kernel_initializer=k_initializer, bias_initializer=b_initializer)
         self.turning = tf.keras.layers.Dense(1, activation=map_to_range)  # sigmoid for turning direction
 
-        self.opt = tf.keras.optimizers.RMSprop(learning_rate)
+        self.opt = tf.keras.optimizers.Nadam(learning_rate, beta_1=0.95)
 
     def call(self, inputs):
         x = self.dense1(inputs)
